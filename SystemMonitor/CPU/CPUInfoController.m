@@ -287,9 +287,12 @@
     switch (cpuType) {
         case CPU_TYPE_ANY:      return @"Unknown";          break;
         case CPU_TYPE_ARM:      return @"ARM";              break;
+        case CPU_TYPE_ARM64:    return @"ARM64";            break;
+        case CPU_TYPE_ARM64_32: return @"ARM64_32";         break;
         case CPU_TYPE_HPPA:     return @"HP PA-RISC";       break;
-        case CPU_TYPE_I386:     return @"Intel i386";       break;
+        case CPU_TYPE_I386:     return @"Intel i386";       break; // CPU_TYPE_X86
         case CPU_TYPE_I860:     return @"Intel i860";       break;
+        case CPU_TYPE_X86_64:   return @"Intel x86_64";     break;
         case CPU_TYPE_MC680x0:  return @"Motorola 680x0";   break;
         case CPU_TYPE_MC88000:  return @"Motorola 88000";   break;
         case CPU_TYPE_MC98000:  return @"Motorola 98000";   break;
@@ -306,13 +309,20 @@
         case CPU_SUBTYPE_ARM_ALL:   return @"ARM";          break;
         case CPU_SUBTYPE_ARM_V4T:   return @"ARMv4T";       break;
         case CPU_SUBTYPE_ARM_V5TEJ: return @"ARMv5TEJ";     break;
+        case CPU_SUBTYPE_ARM_XSCALE:return @"ARMxSCALE";    break;
         case CPU_SUBTYPE_ARM_V6:    return @"ARMv6";        break;
         case CPU_SUBTYPE_ARM_V7:    return @"ARMv7";        break;
         case CPU_SUBTYPE_ARM_V7F:   return @"ARMv7F";       break;
         case CPU_SUBTYPE_ARM_V7K:   return @"ARMv7K";       break;
         case CPU_SUBTYPE_ARM_V7S:   return @"ARMv7S";       break;
+        case CPU_SUBTYPE_ARM_V8:    return @"ARMv8";        break;
+        case CPU_SUBTYPE_ARM_V6M:   return @"ARMv6M";       break;
+        case CPU_SUBTYPE_ARM_V7M:   return @"ARMv7M";       break;
+        case CPU_SUBTYPE_ARM_V7EM:  return @"ARMv7EM";      break;
+        case CPU_SUBTYPE_ARM_V8M:   return @"ARMv8M";       break;
 #if !(TARGET_IPHONE_SIMULATOR) // Simulator headers don't include such subtype.
-        case CPU_SUBTYPE_ARM64_V8:  return @"ARM64";        break;
+        case CPU_SUBTYPE_ARM64_V8:  return @"ARM64v8";      break;
+        case CPU_SUBTYPE_ARM64E:    return @"ARM64E";       break;
 #endif
         default:                    return @"Unknown";      break;
     }
